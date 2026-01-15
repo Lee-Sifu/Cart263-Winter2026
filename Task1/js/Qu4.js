@@ -20,12 +20,28 @@ function setup() {
 
 function draw() {
     background(0);
-    fill(rect1Color.r, rect1Color.g, rect1Color.b);
+
+    if (mouseX > rect1X && mouseX < rect1X + rectWidth) {
+        fill(255);
+    } else {
+        fill(rect1Color.r, rect1Color.g, rect1Color.b);
+    }
     rect(rect1X, 0, rectWidth, rectHeight);
 
-    fill(rect2Color.r, rect2Color.g, rect2Color.b);
+    if (mouseX > rect2X && mouseX < rect2X + rectWidth) {
+        fill(255);
+    } else {
+        fill(rect2Color.r, rect2Color.g, rect2Color.b);
+    }
     rect(rect2X, 0, rectWidth, rectHeight);
 
-    fill(rect3Color.r, rect3Color.g, rect3Color.b);
+    if (mouseX > rect3X && mouseX < rect3X + rectWidth) {
+        fill(255);
+    } else {
+        fill(rect3Color.r, rect3Color.g, rect3Color.b);
+    }
     rect(rect3X, 0, rectWidth, rectHeight);
+
+
 }
+
