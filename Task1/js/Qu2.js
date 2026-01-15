@@ -1,0 +1,24 @@
+"use struct";
+
+
+function setup() {
+    createCanvas(800, 600);
+}
+
+function draw() {
+    drawEllipses1();
+    drawEllipses2();
+    drawEllipses3();
+}
+function drawEllipses1() {
+    fill(255, 0, 0);
+    ellipse(100, 100, 50, 50);
+}
+function drawEllipses2() {
+    fill(0, 0, 255);
+    ellipse(300, 200, 50, 50);
+}
+function drawEllipses3() {
+    fill(0, 255, 0);
+    ellipse(600, 400, 50, 50);
+}
