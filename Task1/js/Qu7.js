@@ -2,6 +2,7 @@
 
 let circleSize = 50;
 let fillColor;
+let isCircle = true;
 
 function setup() {
     createCanvas(800, 600);
@@ -15,7 +16,11 @@ function draw() {
         for (let row = 0; row < height / circleSize; row++) {
             let x = col * circleSize + circleSize / 2;
             let y = row * circleSize + circleSize / 2;
-            ellipse(x, y, circleSize * 0.8, circleSize * 0.8);
+            if (isCircle) {
+                ellipse(x, y, circleSize * 0.8, circleSize * 0.8);
+            } else {
+                rect(x - circleSize * 0.4, y - circleSize * 0.4, circleSize * 0.8, circleSize * 0.8);
+            }
         }
     }
 }
@@ -28,4 +33,8 @@ function keyPressed() {
 
 function changeRandomFill() {
     fillColor = color(random(255), random(255), random(255));
+}
+
+function mousePressed() {
+    isCircle = !isCircle;
 }
