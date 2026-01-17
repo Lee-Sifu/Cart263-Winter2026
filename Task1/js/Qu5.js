@@ -1,4 +1,4 @@
-"use struct";
+"use strict";
 
 let counter = 0;
 let radius = 75;

@@ -1,4 +1,5 @@
-"use struct";
+"use strict";
+
 const rectsize = 80;
 
 let rect1 = {

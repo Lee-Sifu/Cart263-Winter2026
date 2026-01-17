@@ -1,4 +1,4 @@
-"use structs";
+"use strict";
 
 const text = {
 name: "test",
