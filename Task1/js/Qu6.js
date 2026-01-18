@@ -34,5 +34,5 @@ function displayTextVertical(index) {
     fill(myText.color);
     textSize(myText.textSize);
     textAlign(CENTER, CENTER);
-    text(String(index), myText.positionX, myText.positionY + index * 20);  
+    text(String(index), myText.positionX, myText.positionY + index * 20);
 }
