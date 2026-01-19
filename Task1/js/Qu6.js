@@ -14,11 +14,11 @@ function setup() {
 
 function draw() {
     background(0, 0, 0);
-    let i = 0;
-    for (i = 0; i < 10; i++) { 
+    
+    for (let i = 0; i < 10; i++) { 
         displayText(i);
     }
-    for (i = 15; i >= 1; i--) {
+    for (let i = 15; i >= 1; i--) {
         displayTextVertical(i);
     }
 }
@@ -27,12 +27,12 @@ function displayText(index) {
     fill(myText.color);
     textSize(myText.textSize);
     textAlign(CENTER, CENTER);
-    text(String(index), myText.positionX + index * 20, myText.positionY);  
+    text(myText.name + " " + String(index), myText.positionX + index * 20, myText.positionY);  
 }
 
 function displayTextVertical(index) { 
     fill(myText.color);
     textSize(myText.textSize);
     textAlign(CENTER, CENTER);
-    text(String(index), myText.positionX, myText.positionY + index * 20);
+    text(myText.name + " " + String(index), myText.positionX, myText.positionY + index * 20);
 }
