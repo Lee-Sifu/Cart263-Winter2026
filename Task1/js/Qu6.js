@@ -8,12 +8,20 @@ const myText = {
     positionY: 300,
 }
 
+const horizontalY = 50;  
+const verticalX = 30;    
+
 function setup() {
     createCanvas(800, 700);
 }
 
 function draw() {
     background(0, 0, 0);
+    
+    fill(myText.color);
+    textSize(myText.textSize);
+    textAlign(CENTER, CENTER);
+    text(myText.name, myText.positionX, myText.positionY);
     
     for (let i = 0; i < 10; i++) { 
         displayText(i);
@@ -27,12 +35,12 @@ function displayText(index) {
     fill(myText.color);
     textSize(myText.textSize);
     textAlign(CENTER, CENTER);
-    text(myText.name + " " + String(index), myText.positionX + index * 20, myText.positionY);  
+    text(String(index), index * 30, horizontalY);  
 }
 
 function displayTextVertical(index) { 
     fill(myText.color);
     textSize(myText.textSize);
-    textAlign(CENTER, CENTER);
-    text(myText.name + " " + String(index), myText.positionX, myText.positionY + index * 20);
+    textAlign(LEFT, CENTER);
+    text(String(index), verticalX, index * 30); 
 }
