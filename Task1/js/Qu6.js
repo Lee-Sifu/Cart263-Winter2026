@@ -8,8 +8,8 @@ const myText = {
     positionY: 300,
 }
 
-const horizontalY = 50;  
-const verticalX = 30;    
+const horizontalY = 8;  
+const verticalX = 9;    
 
 function setup() {
     createCanvas(800, 700);
