@@ -1,5 +1,6 @@
 "use strict";
 
+// Text object to hold properties
 const myText = {
     name: "test",
     color: [255],
@@ -8,6 +9,7 @@ const myText = {
     positionY: 300,
 }
 
+// Positions for horizontal and vertical text
 const horizontalY = 8;  
 const verticalX = 9;    
 
@@ -18,19 +20,23 @@ function setup() {
 function draw() {
     background(0, 0, 0);
     
+    // Display main text
     fill(myText.color);
     textSize(myText.textSize);
     textAlign(CENTER, CENTER);
     text(myText.name, myText.positionX, myText.positionY);
     
+    // Display numbers horizontally and vertically
     for (let i = 0; i < 10; i++) { 
         displayText(i);
     }
+    // Display numbers vertically
     for (let i = 15; i >= 1; i--) {
         displayTextVertical(i);
     }
 }
 
+// Function to display text at given index
 function displayText(index) {
     fill(myText.color);
     textSize(myText.textSize);
@@ -38,6 +44,7 @@ function displayText(index) {
     text(String(index), index * 30, horizontalY);  
 }
 
+// Function to display text vertically at given index
 function displayTextVertical(index) { 
     fill(myText.color);
     textSize(myText.textSize);

@@ -1,15 +1,19 @@
 "use strict";
 
+// Define canvas size
 const canvasWidth = 800;
 const canvasHeight = 600;
 
+// Define rectangle properties
 const rectWidth = canvasWidth / 3;
 const rectHeight = canvasHeight;
 
+// Define rectangle positions
 const rect1X = 0;
 const rect2X = rectWidth;
 const rect3X = rectWidth * 2;
 
+// Define rectangle colors
 const rect1Color = {r: 0, g: 255, b: 255};
 const rect2Color = {r: 0, g: 0, b: 255};
 const rect3Color = {r: 150, g: 222, b: 209};
@@ -21,6 +25,7 @@ function setup() {
 function draw() {
     background(0);
 
+    // Draw rectangles and change color on mouse hover
     if (mouseX > rect1X && mouseX < rect1X + rectWidth) {
         fill(255);
     } else {

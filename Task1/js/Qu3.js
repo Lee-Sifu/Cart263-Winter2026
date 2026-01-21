@@ -1,17 +1,22 @@
 "use strict";
 
+// Size of the rectangles
 const rectsize = 80;
 
+// Define three rectangle objects with properties
 let rect1 = {
     x: 30,
     y: 20,
     color: [255, 200, 0]
 }
+
+// Second rectangle object
 let rect2 = {
     x: 80,
     y: 90,
     color: [0, 200, 255]
 }
+// Third rectangle object with speed property
 let rect3 = {
     x: 130,
     y: 40,
@@ -39,6 +44,7 @@ function draw() {
     rect(rect3.x, rect3.y, rectsize, rectsize);
 }
 
+// Change position of rectangles based on mouse press and key press
 function mousePressed() {
     if (mouseX > 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
     rect1.x = random(width - rectsize);
@@ -46,6 +52,7 @@ function mousePressed() {
 }
 }
 
+// Change position of rectangles based on mouse press and key press
 function keyPressed() {
     if (key === ' ') {
     rect2.x = random(width - rectsize);
