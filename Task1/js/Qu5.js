@@ -1,59 +1,95 @@
 "use strict";
 
 let counter = 0;
-let radius = 75;
-let ellipseAlpha = 255;
 
+// Variable of the square button
 const square = {
-    x: 45,
-    y: 55,
-    w: 50,
-    h: 50,
-    color: [255, 165, 0]
-}
+x: 50,
+y: 50,
+w: 50,
+h: 50,
+color: 'orange'
+};
+
+// radius of the first ellipse
+let radius = 30;
+
+// alpha value of the first ellipse
+let ellipseAlpha = 20;
+
+
 function setup() {
-    createCanvas(800, 600);
+createCanvas(600, 600);
 }
 
 function draw() {
-background(150, 100, 200);
+background(0);
+
 displaySquare();
+
+// Do not draw anything if the counter is greater than 10 or less than 1
+if (counter < 1 || counter > 10) {
+return;
 }
+
+// Reset radius and transparency for each frame
+let currentRadius = radius;
+let currentAlpha = ellipseAlpha;
+
+// variable for while loop counter
+let i = 0;
+
+while (i < counter) {
+
+// set fill color with current alpha
+fill(255, currentAlpha);
+noStroke();
+
+// draw ellipse at center of canvas
+ellipse(width / 2, height / 2, currentRadius, currentRadius);
+
+// increase radius for next ellipse
+currentRadius += 25;
+
+// increase alpha for next ellipse
+currentAlpha += 20;
+
+i++;
+}
+}
+
 
 function displaySquare() {
-// Check if mouse is over square and highlight if true
-let isHovering = checkCollisionWithSquare();
 
-// Set color based on hover state
-if (isHovering) {
-    fill(255, 200, 100); // lighter orange
+// if mouse is inside the square, change coolor to light orange
+if (checkCollisionWithSquare()) {
+fill(255, 200, 120);
 } else {
-    fill(square.color); // orange
+fill(square.color);
 }
 
+noStroke();
 rect(square.x, square.y, square.w, square.h);
 }
 
-function checkCollisionWithSquare() {
-    if (mouseX > square.x && mouseX < square.x + square.w &&
-        mouseY > square.y && mouseY < square.y + square.h) {
-        return true;
-    }
-    return false;
-}
 
-function displayEllipse() {
-    fill(255, 255, 255, ellipseAlpha); // white with alpha
-    ellipse(width / 2, height / 2, radius * 2, radius * 2);
+// check if mouse is inside the square
+function checkCollisionWithSquare() {
+
+if (
+mouseX > square.x &&
+mouseX < square.x + square.w &&
+mouseY > square.y &&
+mouseY < square.y + square.h
+) {
+return true;
+} else {
+return false;
+}
 }
 
 function mousePressed() {
-// Check if mouse is inside square and increment counter using while loop
-let i = 0;
 if (checkCollisionWithSquare()) {
-    while (i < 5) {
-        counter++;
-        i++;
-    }
+counter++;
 }
 }
